@@ -1,0 +1,294 @@
+﻿
+@{
+    ViewData["Title"] = "Registration";
+}
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+<link href="~/lib/font-awesome-4.7/css/font-awesome.css" rel="stylesheet" />
+<link href="~/css/registration.css" rel="stylesheet" />
+
+
+<div class="row justify-content-center">
+    <div class="col-11 col-sm-9 col-md-7 col-lg-6 col-xl-5 text-center p-0 mt-3 mb-2">
+        <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
+            <h2 id="heading">Online Registration</h2>
+            <form id="msform">
+                <!-- progressbar -->
+                <ul id="progressbar">
+                    <li class="active step1" id="account"></li>
+                    <li class="step2" id="personal"></li>
+                    <li class="step3" id="payment"></li>
+                    <li class="step4" id="confirm"></li>
+                </ul>
+
+                <fieldset>
+                    <div class="form-card">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p>
+                                    SOUTHERN PHILIPPINE TECHNICAL COLLEGE (SPTC) OF KORONADAL, INC.
+                                    ONLINE ENROLLMENT AND SURVEY ON PREFERRED ALTERNATIVE DELIVERY MODE (Learning Modalities) SCHOOL YEAR 2020-2021
+                                </p>
+                                <p>
+                                    In the midst of the Covid 19 pandemic, the approach to education shall be anchored on the premise that education must continue and therefore it is everybody’s responsibility to ensure that flexible learning is delivered to students whether Online or Offline Learning.
+                                    We have good news to incoming First Year students and Transferees.
+
+                                    We provide Online and Offline Learning. You may now start enrolling through our Online System. It's so easy to follow. Just fillout the required information below :
+
+                                </p>
+                                @*<p>
+                                        For some clarifications regarding this Online Enrollment, please don’t hesitate to contact <br />
+                                        Prof. Eugene G. Pamplona at Tel. No. 552-6662/Mobile Phone: 09275345327/09104113122.
+                                    </p>*@
+                                <br />
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <input type="hidden" name="CourseId" id="CourseId" />
+                                    <label>Course*</label>
+                                    <label class="has-error" style="display:none">- Please choose course.</label>
+                                    <div class="courses pl-3"></div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <input type="hidden" name="YearLevelId" id="YearLevelId" />
+                                    <label>Year Level*</label>
+                                    <label class="has-error" style="display:none">- Please choose year level.</label>
+                                    <select id="SelectYearLevel" class="form-control">
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <input type="button" name="next" class="next action-button pull-right" value="Next" />
+                </fieldset>
+                <fieldset>
+                    <div class="form-card">
+
+                        <div class="row">
+                            <div class="form-group col-md-4 p-2">
+                                <label>Last Name*</label>
+                                <input id="LastName" name="LastName" placeholder="Last Name" class="form-control" type="text" required>
+                            </div>
+                            <div class="form-group col-md-4 p-2">
+                                <label>First Name*</label>
+                                <input id="FirstName" name="FirstName" placeholder="First Name" class="form-control" type="text" required>
+                            </div>
+                            <div class="form-group col-md-4 p-2">
+                                <label>Middle Name*</label>
+                                <input id="MiddleName" name="MiddleName" placeholder="Middle Name" class="form-control" type="text" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-2 p-2">
+                                <label>Age*</label>
+                                <input id="Age" name="Age" placeholder="Age" class="form-control" type="number" required>
+                            </div>
+                            <div class="form-group col-md-2 p-2">
+                                <label>Gender*</label>
+                                <input type="hidden" name="GenderId" id="GenderId" />
+                                <select id="SelectGender" class="form-control">
+                                    <option value="0" selected>Choose</option>
+                                    <option value="1"> Male</option>
+                                    <option value="2"> Female</option>
+                                </select>
+                                <label class="has-error" style="display:none">This field is required.</label>
+                            </div>
+                            <div class="form-group col-md-4 p-2">
+                                <label>Date of Birth*</label>
+                                <input type="hidden" name="DateOfBirth" id="DateOfBirth" value="" />
+                                <input id="PickerDateOfBirth" placeholder="MM/DD/YYYY"  readonly style="background-color: white" class="form-control" type="text">
+                                <label class="has-error" style="display:none">This field is required.</label>
+                            </div>
+                            <div class="form-group col-md-4 p-2">
+                                <label>Mobile No.*</label>
+                                <input id="MobileNo" name="MobileNo" placeholder="Mobile No." class="form-control" required type="text">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-md-4 p-2">
+                                <label>Email Address</label>
+                                <input id="EmailAddress" name="EmailAddress" placeholder="Email Address" class="form-control" type="text" required>
+                            </div>
+                            <div class="form-group col-md-4 p-2">
+                                <label>Height (in cm.)*</label>
+                                <input id="Height" name="Height" placeholder="Height" class="form-control" type="number" required>
+                            </div>
+                            <div class="form-group col-md-4 p-2">
+                                <label>Weight (in kg.)*</label>
+                                <input id="Weight" name="Weight" placeholder="Weight" class="form-control" type="number" required>
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-md-12 p-2">
+                                <label>Address*</label>
+                                <input id="Address" name="Address" placeholder="Address" class="form-control" required type="text">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-md-12 p-2">
+                                <label>Mother's Maiden Name* </label> <span style="font-size:10px">(Last Name, First Name, Middle Name)</span>
+                                <input id="MotherMaidenName" name="MotherMaidenName" placeholder="Name" class="form-control" required type="text">
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-md-12 p-2">
+                                <label>Father's Name* </label> <span style="font-size:10px">(Last Name, First Name, Middle Name)</span>
+                                <input id="FatherName" name="FatherName" placeholder="Name" class="form-control" required type="text">
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-md-12 p-2">
+                                <label>Guardian's Name* </label> <span style="font-size:10px">(Last Name, First Name, Middle Name)</span>
+                                <input id="GuardianName" name="GuardianName" placeholder="Guardian's Name" class="form-control" required type="text">
+                            </div>
+
+                            <div class="form-group col-md-12 p-2">
+                                <label>Relationship with Guardian*</label>
+                                <input id="RelationshipWithGuardian" name="RelationshipWithGuardian" placeholder="Relationship with Guardian" class="form-control" required type="text">
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="form-group col-md-6 p-2">
+
+                                <input type="hidden" name="StatusOfEnrollmentId" id="StatusOfEnrollmentId" />
+                                <label>Status of Enrollment*</label>
+
+                                <select id="SelectStatusOfEnrollment" class="form-control">
+                                </select>
+                                <label class="has-error" style="display:none">This field is required.</label>
+                            </div>
+                        </div>
+
+
+                        <div class="row seniorHighProgram" style="display:none">
+                            <div class="form-group col-md-6 p-2">
+
+                                <input type="hidden" name="TrackOfChoiceId" id="TrackOfChoiceId" value="0" />
+                                <label>Track of Choice*</label>
+
+                                <select id="SelectTrackOfChoice" class="form-control">
+                                </select>
+                                <label class="has-error" style="display:none">This field is required.</label>
+                            </div>
+
+                            <div class="form-group col-md-6 p-2">
+
+                                <input type="hidden" name="StrandOfChoiceId" id="StrandOfChoiceId" value="0" />
+                                <label>Strand of Choice*</label>
+
+                                <select id="SelectStrandOfChoice" class="form-control">
+                                </select>
+                                <label class="has-error" style="display:none">This field is required.</label>
+                            </div>
+
+                        </div>
+
+
+
+
+                        <div class="row">
+                            <div class="form-group col-md-12 p-2">
+
+                                <input type="hidden" name="AverageId" id="AverageId" />
+                                <label>Presumed final average obtained last SY 2019-2020</label>
+
+                                <div class="averages pl-3"></div>
+                                <label class="has-error" style="display:none">This field is required.</label>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-md-12 p-2">
+                                <input type="hidden" name="InternetAccessSurveyId" id="InternetAccessSurveyId" value="" />
+                                <label>Internet Access Survey*</label>
+
+                                <div class="internetAccessSurvies pl-3"></div>
+                                <label class="has-error" style="display:none">This field is required.</label>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-md-12 p-2">
+                                <input type="hidden" name="ModeOfLearningId" id="ModeOfLearningId" value="" />
+                                <label>Preferred Mode Of Learning*</label>
+
+                                <div class="modeOfLearnings pl-3"></div>
+                                <label class="has-error" style="display:none">This field is required.</label>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <input type="button" name="previous" class="previous action-button-previous" value="Back" />
+                    <input type="button" name="next" class="next action-button pull-right" value="Next" />
+                </fieldset>
+                <fieldset>
+                    <div class="form-card">
+                        <div class="row mb-3">
+                            <div class="col-md-12">
+                                <p>
+                                    Please review your registration details below to ensure that all the information provided is correct.
+                                    You can click <b>Back</b> button to edit.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="reviews">
+
+                        </div>
+
+                    </div>
+                    <br>
+                    <input type="button" name="previous" class="previous action-button-previous" value="Back" />
+                    <input type="button" name="next" class="next action-button pull-right btn-submit" value="Submit" />
+
+                </fieldset>
+                <fieldset>
+                    <div class="form-card">
+                        <h2 class="text-center text-success"><strong>SUCCESS!</strong></h2>
+                        <div class="row justify-content-center">
+                            <div class="col-md-3 justify-content-center d-flex">
+                                @*<img src="https://i.imgur.com/GwStPmg.png" class="fit-image">*@
+                                <span class="fa fa-check text-success" style="font-size:7em">
+
+                                </span>
+                            </div>
+                        </div> <br>
+                        <div class="row justify-content-center">
+                            <div class="col-md-7 text-center">
+                                <h5 class="text-center text-success">You Have Successfully Registered!</h5>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <input type="button" name="next" class="next action-button" value="Finish" />
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="~/lib/datepicker/moment.min.js"></script>
+    <script src="~/lib/datepicker/bootstrap-datepicker.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="~/lib/toastr/toastr.min.js"></script>
+    <script src="~/js/registration.js"></script>
+}
+

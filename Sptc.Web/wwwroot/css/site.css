@@ -1,0 +1,12 @@
+﻿.form-group.has-error > label {
+    color: #dd4b39;
+}
+
+.form-group.has-error .form-control {
+    border-color: #dd4b39;
+    box-shadow: none;
+}
+
+.toast-warning{
+    background:red !important;
+}
